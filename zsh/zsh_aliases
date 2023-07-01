@@ -1,0 +1,15 @@
+# Common FE commands
+alias nrs="npm run start"
+alias nrl="npm run lint"
+
+# Tmux
+alias sotmux="tmux source-file ~/.config/tmux/tmux.conf"
+alias ta="tmux attach"
+
+# Neovim
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+
+# Lazygit
+alias lg="lazygit"
