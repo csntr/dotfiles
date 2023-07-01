@@ -72,6 +72,11 @@ local plugins = {
 		event = "VimEnter",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 }
 
 require("lazy").setup(plugins)
