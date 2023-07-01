@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.config/alacritty: alacritty
+    ~/.config/tmux: tmux
+    ~/.config/yabai: yabai
+    ~/.config/skhd: skhd
+    ~/.config/starship.toml: starship.toml
+    ~/.config/nvim: nvim
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
