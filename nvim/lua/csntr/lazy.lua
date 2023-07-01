@@ -65,7 +65,13 @@ local plugins = {
 
 	{ "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 
-	"lewis6991/gitsigns.nvim"
+	"lewis6991/gitsigns.nvim",
+
+	{
+		"goolord/alpha-nvim",
+		event = "VimEnter",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 }
 
 require("lazy").setup(plugins)
