@@ -68,12 +68,6 @@ local plugins = {
 	"lewis6991/gitsigns.nvim",
 
 	{
-		"goolord/alpha-nvim",
-		event = "VimEnter",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-
-	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
