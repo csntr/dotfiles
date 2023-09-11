@@ -9,3 +9,13 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
+
+# hyper shortcuts
+cmd + shift + alt + ctrl - c : open /Applications/Google\ Chrome.app
+cmd + shift + alt + ctrl - b : open /Applications/Brave\ Browser.app
+cmd + shift + alt + ctrl - v : open /Applications/Visual\ Studio\ Code.app
+cmd + shift + alt + ctrl - a : open /Applications/Alacritty.app
+cmd + shift + alt + ctrl - m : open /Applications/Spotify.app
+cmd + shift + alt + ctrl - n : open /Applications/Notion.app
+cmd + shift + alt + ctrl - s : open /Applications/Slack.app
+cmd + shift + alt + ctrl - d : open /Applications/Calendar.app
