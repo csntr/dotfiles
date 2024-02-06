@@ -1,1 +1,4 @@
 tmux/plugins
+
+# Old nvim folders
+*_nvim
