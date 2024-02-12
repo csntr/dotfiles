@@ -7,6 +7,7 @@ return {
     config = function()
       vim.cmd.colorscheme "catppuccin"
       vim.cmd(":highlight LineNr guifg=#585b70")
+      vim.cmd(":highlight WinSeparator guifg=#313244")
     end
   }
 }
