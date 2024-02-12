@@ -43,6 +43,9 @@ return {
         theme = bubbles_theme,
         component_separators = '┆',
         section_separators = { left = '', right = '' },
+        disabled_filetypes = {
+          statusline = { 'neo-tree' }
+        }
       },
       sections = {
         lualine_a = {
