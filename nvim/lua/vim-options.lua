@@ -24,8 +24,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- [ Enable undo history to be persisted ]
-vim.opt.undofile = true
+vim.opt.undofile = true -- Enable undo history to be persisted 
+vim.opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
 -- [ Move lines in visual mode ]
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
