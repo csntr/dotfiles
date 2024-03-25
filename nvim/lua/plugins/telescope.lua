@@ -4,9 +4,14 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
-		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
-		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" })
-		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
+		local wk = require("which-key")
+
+		wk.register({ s = { name = "Search" } }, { prefix = "<leader>" })
+
+		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search Files" })
+		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search by Grep" })
+		vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Search Buffers" })
+		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search Help" })
+		vim.keymap.set("n", "<leader>st", builtin.treesitter, { desc = "Search Treesitter" })
 	end,
 }
