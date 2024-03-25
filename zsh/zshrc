@@ -153,3 +153,5 @@ alias vi="nvim"
 alias v="nvim"
 alias ta="tmux attach"
 alias lg="lazygit"
+
+PATH=~/.console-ninja/.bin:$PATH
