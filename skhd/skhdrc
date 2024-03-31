@@ -19,3 +19,7 @@ hyper - m : open /Applications/Spotify.app
 hyper - n : open /Applications/Notion.app
 hyper - s : open /Applications/Slack.app
 hyper - d : open /Applications/Calendar.app
+
+# float / unfloat window and center on screen
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2
