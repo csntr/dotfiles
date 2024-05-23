@@ -26,13 +26,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.opt.undofile = true -- Enable undo history to be persisted
 vim.opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
--- [ Move lines in visual mode ]
+-- Move lines in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- [ Make scrolling less disorienting ]
+-- Make scrolling less disorienting
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Yank to system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to Clipboard" })
 
 vim.opt.breakindent = true
 vim.opt.scrolloff = 10
