@@ -9,12 +9,12 @@ return {
 	config = function()
 		vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left toggle<CR>", { desc = "File Tree" })
 
-    require('neo-tree').setup({
-      filesystem = {
-        filtered_items = {
-          visible = true
-        }
-      }
-    })
+		require("neo-tree").setup({
+			filesystem = {
+				filtered_items = {
+					visible = true,
+				},
+			},
+		})
 	end,
 }
