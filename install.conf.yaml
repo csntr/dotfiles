@@ -10,7 +10,9 @@
     ~/.config/yabai: yabai
     ~/.config/skhd: skhd
     ~/.config/starship.toml: starship.toml
-    ~/.config/nvim: nvim
+    ~/.config/nvim: LazyVim
+    ~/.config/PersonalNvim: PersonalNvim
+    ~/.config/LazyVim: LazyVim
     ~/.zshrc:
       force: true
       path: zsh/zshrc
