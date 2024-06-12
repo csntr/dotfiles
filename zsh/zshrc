@@ -143,10 +143,6 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-alias nrs="npm run start"
-alias nrl="npm run lint"
-alias grd="git rebase develop"
-
 alias sotmux="tmux source-file ~/.config/tmux/tmux.conf"
 alias vim="nvim"
 alias vi="nvim"
@@ -178,3 +174,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+alias yabai rs="yabai --stop-service && yabai --start-service"
