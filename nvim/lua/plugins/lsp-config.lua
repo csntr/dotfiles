@@ -37,7 +37,7 @@ return {
 				capabilities = capabilities,
 			})
 
-			-- lspconfig.tailwindcss.setup({})
+			lspconfig.tailwindcss.setup({})
 
 			lspconfig.astro.setup({})
 
@@ -91,8 +91,8 @@ return {
 				},
 			})
 
-			lspconfig.volar.setup({})
-			--[[ lspconfig.volar.setup({
+			-- lspconfig.volar.setup({})
+			lspconfig.volar.setup({
 				filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
 				init_options = {
 					vue = {
@@ -102,7 +102,9 @@ return {
 						tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
 					},
 				},
-			}) ]]
+			})
+
+			-- lspconfig.stylelint_lsp.setup{}
 
 			local wk = require("which-key")
 			wk.register({
@@ -115,6 +117,7 @@ return {
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go To Definition" })
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go To References" })
 			vim.keymap.set("n", "<leader>gc", vim.lsp.buf.code_action, { desc = "Code Actions" })
+			vim.keymap.set("n", "<leader>gR", vim.lsp.buf.rename, { desc = "Rename" })
 		end,
 	},
 }
