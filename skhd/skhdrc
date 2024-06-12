@@ -12,7 +12,7 @@ shift + alt - e : yabai -m space --balance
 
 # hyper shortcuts
 hyper - c : open /Applications/Google\ Chrome.app
-hyper - b : open /Applications/Brave\ Browser.app
+hyper - b : open /Applications/Arc.app
 hyper - v : open /Applications/Visual\ Studio\ Code.app
 hyper - a : open /Applications/Alacritty.app
 hyper - m : open /Applications/Spotify.app
