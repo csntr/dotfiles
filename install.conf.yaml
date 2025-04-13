@@ -6,6 +6,7 @@
 
 - link:
     ~/.config/alacritty: alacritty
+    ~/.config/ghostty: ghostty
     ~/.config/tmux: tmux
     ~/.config/aerospace: aerospace
     ~/.config/starship.toml: starship.toml
