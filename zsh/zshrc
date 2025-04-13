@@ -104,21 +104,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-hume-serve-e2e() {
-    VUE_APP_PORT=8090\
-    VUE_APP_API_BASE_URL=https://hume-api-tamas-test-e2e.dev.graphaware.io\
-    VUE_APP_BASE_PATH=/\
-    ./node_modules/.bin/vue-cli-service serve
-}
-
-hume-test-e2e() {
-    VUE_APP_PORT=8090\
-    CYPRESS_API_BASE_URL=https://hume-api-tamas-test-e2e.dev.graphaware.io\
-    VUE_APP_API_BASE_URL=https://hume-api-tamas-test-e2e.dev.graphaware.io\
-    VUE_APP_BASE_PATH=/\
-    ./node_modules/.bin/vue-cli-service test:e2e --url="http://localhost:8090"
-}
-
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
@@ -150,7 +135,7 @@ alias v="nvim"
 alias ta="tmux attach"
 alias lg="lazygit"
 
-PATH=~/.console-ninja/.bin:$PATH
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/tamascsontos/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
