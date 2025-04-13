@@ -11,7 +11,6 @@
     ~/.config/skhd: skhd
     ~/.config/starship.toml: starship.toml
     ~/.config/nvim: LazyVim
-    ~/.config/PersonalNvim: PersonalNvim
     ~/.config/LazyVim: LazyVim
     ~/.zshrc:
       force: true
