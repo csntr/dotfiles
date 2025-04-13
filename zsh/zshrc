@@ -194,3 +194,6 @@ function nvims() {
 }
 
 bindkey -s ^a "nvims\n"
+
+export BAT_THEME="Catppuccin Mocha"
+
