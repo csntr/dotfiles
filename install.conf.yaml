@@ -7,8 +7,6 @@
 - link:
     ~/.config/alacritty: alacritty
     ~/.config/tmux: tmux
-    ~/.config/yabai: yabai
-    ~/.config/skhd: skhd
     ~/.config/aerospace: aerospace
     ~/.config/starship.toml: starship.toml
     ~/.config/nvim: LazyVim
