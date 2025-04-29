@@ -95,90 +95,22 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
+# Tmux aliases
 alias sotmux="tmux source-file ~/.config/tmux/tmux.conf"
+alias ta="tmux attach"
+
+# Nvim aliases
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-alias ta="tmux attach"
+
+# Lazygit aliases
 alias lg="lazygit"
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/tamascsontos/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/tamascsontos/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/tamascsontos/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/tamascsontos/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# pnpm
-export PNPM_HOME="/Users/tamascsontos/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-alias yabai rs="yabai --stop-service && yabai --start-service"
-
-# Nvim config switcher
-alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-personal="NVIM_APPNAME=PersonalNvim nvim"
-
-function nvims() {
-  items=("default" "LazyVim" "PersonalNvim")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
-
-bindkey -s ^a "nvims\n"
 
 export BAT_THEME="Catppuccin Mocha"
 
