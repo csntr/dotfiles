@@ -2,3 +2,9 @@ tmux/plugins
 
 # Old nvim folders
 *_nvim
+
+# Machine-local secret files — should never be tracked
+.zshrc.local
+*.local
+.env
+.env.*
