@@ -138,6 +138,9 @@ automatically-unhide-macos-hidden-apps = false
     alt-a = ['exec-and-forget open -a Claude',                'workspace A']
     alt-m = ['exec-and-forget open -a Spotify',               'workspace M']
 
+    # Steam — switch only, never auto-launch (avoids accidental gaming during work)
+    alt-g = 'workspace G'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
@@ -150,6 +153,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-n = 'move-node-to-workspace N'
     alt-shift-a = 'move-node-to-workspace A'
     alt-shift-m = 'move-node-to-workspace M'
+    alt-shift-g = 'move-node-to-workspace G'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -196,6 +200,7 @@ S = 'secondary'
 N = 'secondary'
 A = 'secondary'
 M = 'secondary'
+G = 'main'
 
 # --- Float rules — keep these BEFORE workspace-routing rules.
 # First matching rule wins, so settings windows float before they get tiled.
@@ -260,3 +265,7 @@ run = ['move-node-to-workspace A', 'layout accordion']
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = ['move-node-to-workspace M', 'layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+run = ['move-node-to-workspace G', 'layout accordion']
