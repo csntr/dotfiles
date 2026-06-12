@@ -3,6 +3,10 @@ tmux/plugins
 # Old nvim folders
 *_nvim
 
+# macOS Finder metadata
+.DS_Store
+**/.DS_Store
+
 # Machine-local secret files — should never be tracked
 .zshrc.local
 *.local
