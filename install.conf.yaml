@@ -14,6 +14,7 @@
     ~/.zshrc:
       force: true
       path: zsh/zshrc
+    ~/.claude/skills: claude/skills
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
