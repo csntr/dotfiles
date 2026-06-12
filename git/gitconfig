@@ -1,0 +1,26 @@
+[pull]
+	rebase = false
+
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[include]
+	path = ~/.config/git/catppuccin.gitconfig
+
+[delta]
+	features = catppuccin-mocha
+	navigate = true
+	light = false
+	line-numbers = true
+	syntax-theme = Catppuccin Mocha
+
+[merge]
+	conflictStyle = zdiff3
+
+# Machine-local identity (user.name/email, signing keys) lives in ~/.gitconfig.local
+# Not tracked in dotfiles — see also .gitignore.
+[include]
+	path = ~/.gitconfig.local

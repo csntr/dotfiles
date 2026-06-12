@@ -1,0 +1,10 @@
+gui:
+  theme:
+    # Black background behind the highlighted line — replaces the unreadable
+    # light-blue-with-white-text default.
+    selectedLineBgColor:
+      - black
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never

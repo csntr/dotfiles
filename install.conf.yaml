@@ -8,12 +8,17 @@
     ~/.config/ghostty: ghostty
     ~/.config/tmux: tmux
     ~/.config/aerospace: aerospace
+    "~/Library/Application Support/lazygit/config.yml": lazygit/config.yml
     ~/.config/starship.toml: starship.toml
     ~/.config/nvim: LazyVim
     ~/.config/LazyVim: LazyVim
     ~/.zshrc:
       force: true
       path: zsh/zshrc
+    ~/.gitconfig:
+      force: true
+      path: git/gitconfig
+    ~/.config/git/catppuccin.gitconfig: git/catppuccin.gitconfig
     ~/.claude/skills: claude/skills
 
 - shell:
