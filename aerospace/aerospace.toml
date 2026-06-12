@@ -104,10 +104,10 @@ automatically-unhide-macos-hidden-apps = false
     alt-comma = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-    alt-h = 'focus left'
-    alt-j = 'focus down'
-    alt-k = 'focus up'
-    alt-l = 'focus right'
+    alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+    alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+    alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
+    alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-shift-h = 'move left'
@@ -119,71 +119,37 @@ automatically-unhide-macos-hidden-apps = false
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
 
+    # Toggle fullscreen for the focused window
+    alt-shift-f = 'fullscreen'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
-    alt-4 = 'workspace 4'
-    alt-5 = 'workspace 5'
-    alt-6 = 'workspace 6'
-    alt-7 = 'workspace 7'
-    alt-8 = 'workspace 8'
-    alt-9 = 'workspace 9'
-    # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-    # alt-b = 'workspace B'
-    # alt-c = 'workspace C'
-    # alt-d = 'workspace D'
-    # alt-e = 'workspace E'
-    # alt-f = 'workspace F'
-    # alt-g = 'workspace G'
-    # alt-i = 'workspace I'
-    # alt-m = 'workspace M'
-    # alt-n = 'workspace N'
-    # alt-o = 'workspace O'
-    # alt-p = 'workspace P'
-    # alt-q = 'workspace Q'
-    # alt-r = 'workspace R'
-    # alt-s = 'workspace S'
-    # alt-t = 'workspace T'
-    # alt-u = 'workspace U'
-    # alt-v = 'workspace V'
-    # alt-w = 'workspace W'
-    # alt-x = 'workspace X'
-    # alt-y = 'workspace Y'
-    # alt-z = 'workspace Z'
+    # Lettered workspaces — app-as-launcher pattern.
+    # Press once: opens the app if not running, then jumps to its workspace.
+    # Press again: just jumps (open is idempotent).
+    alt-c = ['exec-and-forget open -a "Visual Studio Code"', 'workspace C']
+    alt-b = ['exec-and-forget open -a Arc',                   'workspace B']
+    alt-t = ['exec-and-forget open -a Ghostty',               'workspace T']
+    alt-d = ['exec-and-forget open -a Postman',               'workspace D']
+    alt-s = ['exec-and-forget open -a Slack',                 'workspace S']
+    alt-n = ['exec-and-forget open -a Notion',                'workspace N']
+    alt-a = ['exec-and-forget open -a Claude',                'workspace A']
+    alt-m = ['exec-and-forget open -a Spotify',               'workspace M']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
     alt-shift-3 = 'move-node-to-workspace 3'
-    alt-shift-4 = 'move-node-to-workspace 4'
-    alt-shift-5 = 'move-node-to-workspace 5'
-    alt-shift-6 = 'move-node-to-workspace 6'
-    alt-shift-7 = 'move-node-to-workspace 7'
-    alt-shift-8 = 'move-node-to-workspace 8'
-    alt-shift-9 = 'move-node-to-workspace 9'
-    # alt-shift-a = 'move-node-to-workspace A'
-    # alt-shift-b = 'move-node-to-workspace B'
-    # alt-shift-c = 'move-node-to-workspace C'
-    # alt-shift-d = 'move-node-to-workspace D'
-    # alt-shift-e = 'move-node-to-workspace E'
-    # alt-shift-f = 'move-node-to-workspace F'
-    # alt-shift-g = 'move-node-to-workspace G'
-    # alt-shift-i = 'move-node-to-workspace I'
-    # alt-shift-m = 'move-node-to-workspace M'
-    # alt-shift-n = 'move-node-to-workspace N'
-    # alt-shift-o = 'move-node-to-workspace O'
-    # alt-shift-p = 'move-node-to-workspace P'
-    # alt-shift-q = 'move-node-to-workspace Q'
-    # alt-shift-r = 'move-node-to-workspace R'
-    # alt-shift-s = 'move-node-to-workspace S'
-    # alt-shift-t = 'move-node-to-workspace T'
-    # alt-shift-u = 'move-node-to-workspace U'
-    # alt-shift-v = 'move-node-to-workspace V'
-    # alt-shift-w = 'move-node-to-workspace W'
-    # alt-shift-x = 'move-node-to-workspace X'
-    # alt-shift-y = 'move-node-to-workspace Y'
-    # alt-shift-z = 'move-node-to-workspace Z'
+    alt-shift-c = 'move-node-to-workspace C'
+    alt-shift-b = 'move-node-to-workspace B'
+    alt-shift-t = 'move-node-to-workspace T'
+    alt-shift-d = 'move-node-to-workspace D'
+    alt-shift-s = 'move-node-to-workspace S'
+    alt-shift-n = 'move-node-to-workspace N'
+    alt-shift-a = 'move-node-to-workspace A'
+    alt-shift-m = 'move-node-to-workspace M'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -212,3 +178,85 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+# Pin workspaces to monitors.
+# Replace 'main'/'secondary' with monitor names from `aerospace list-monitors`
+# once aerospace is enabled — e.g. use an ordered fallback list to handle
+# laptop-only / home / office without swapping configs:
+#   B = ['Home Monitor Name', 'Office Monitor Name', 'built-in']
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+C = 'main'
+B = 'main'
+D = 'main'
+T = 'secondary'
+S = 'secondary'
+N = 'secondary'
+A = 'secondary'
+M = 'secondary'
+
+# --- Float rules — keep these BEFORE workspace-routing rules.
+# First matching rule wins, so settings windows float before they get tiled.
+
+# Catch settings/preferences/about windows across all apps
+[[on-window-detected]]
+if.window-title-regex-substring = '^(Settings|Preferences|About)( |—|–|$)'
+run = 'layout floating'
+
+# System Settings — always float
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+# --- Auto-route apps to their home workspace.
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = ['move-node-to-workspace C', 'layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'   # Arc
+run = ['move-node-to-workspace B']
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = ['move-node-to-workspace T']
+
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+run = ['move-node-to-workspace D', 'layout accordion']
+
+# Studio 3T — bundle ID is install4j-generated and brittle, match by name
+[[on-window-detected]]
+if.app-name-regex-substring = 'Studio 3T'
+run = ['move-node-to-workspace D', 'layout accordion']
+
+# Chrome for Testing — the Playwright-installed Chrome build.
+# Distinct from regular Google Chrome (com.google.Chrome), so this rule
+# only catches Playwright-controlled windows.
+[[on-window-detected]]
+if.app-id = 'com.google.chrome.for.testing'
+run = ['move-node-to-workspace D', 'layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace S', 'layout accordion']
+
+# Notion + Notion Calendar share workspace N, tiled (top/bottom on vertical screen)
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = ['move-node-to-workspace N']
+
+[[on-window-detected]]
+if.app-id = 'com.cron.electron'            # Notion Calendar (was Cron)
+run = ['move-node-to-workspace N']
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = ['move-node-to-workspace A', 'layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ['move-node-to-workspace M', 'layout accordion']
